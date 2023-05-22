@@ -1,0 +1,36 @@
+<div class="container">
+  Check more example of
+  <a
+    href="https://furetechnews.com/how-to-create-an-angular-table-in-angular-1314/"
+    target="_blank"
+  >
+    Angular table filter search
+  </a>
+  on
+  <a href="https://furetechnews.com/" target="_blank"> furetechnews.com </a>
+</div>
+
+<div style="margin: 30px">
+  <input
+    type="text"
+    [(ngModel)]="searchString"
+    placeholder="Search by name or country"
+  />
+  <h2>Regular HTML Table</h2>
+  <table>
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Country</th>
+    </tr>
+    <tr
+      *ngFor="let student of students | searchName: searchString; let i = index"
+    >
+      <td>{{ i + 1 }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.gender }}</td>
+      <td>{{ student.country }}</td>
+    </tr>
+  </table>
+</div>
